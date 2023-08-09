@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 class Place(BaseModel):
-    """Represents a place"""
+    """Represents place pbjects"""
 
     city_id = ""
     user_id = ""
