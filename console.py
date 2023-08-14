@@ -160,7 +160,7 @@ class HBNBCommand(cmd.Cmd):
                                                                                                                 words[0] + '.')]
                                                                                                         print(len(matches))
 
-                                                                                                 def do_update(self, line):
+                                                                                                        def do_update(self, line):
                                                                                                                 """Updates instance by adding or updating attribute"""
                                                                                                                 if line == "" or line is None:
                                                                                                                     print("** class name missing **")
