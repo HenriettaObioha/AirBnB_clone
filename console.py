@@ -143,7 +143,7 @@ class HBNBCommand(cmd.Cmd):
                                                                                                 nl = [str(obj) for key, obj in storage.all().items()
                                                                                                         if type(obj).__name__ == words[0]]
                                                                                                 print(nl)
-                                                                                            else:
+                                                                                        else:
                                                                                                 new_list = [str(obj) for key, obj in storage.all().items()]
                                                                                                 print(new_list)
 
