@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''The method Command Interpreter'''
+'''Method Command Interpreter'''
 import cmd
 import shlex
 import models
@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
     ]
 
     def do_create(self, args):
-        '''Creates a new instance of BaseModel, saves and prints the id
+        '''Create a new instance of BaseModel, save it and prints the id
            Usage: create <class name>
         '''
         args = args.split()
@@ -60,7 +60,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, args):
-        '''Deletes an instance
+        '''Delete an instance
            Usage: destroy <class name> <id>
         '''
         args = args.split()
@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
                 print('** no instance found **')
 
     def do_all(self, args):
-        '''Prints a string representation of all instances
+        '''Print a string representation of all instances
            Usage: all <class name>
         '''
         args = args.split()
@@ -101,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
             print(new_list)
 
     def do_update(self, args):
-        '''updates an instance
+        '''update an instance
            Usage update <class name> <id> <attribute name> "<attribute value>"
         '''
         objects = models.storage.all()
@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
             models.storage.save()
 
     def check_class_name(self, name=""):
-        """This Checks if stdin user typed class name and id."""
+        """Check if stdin user typed class name and id."""
         if len(name) == 0:
             print("** class name missing **")
             return False
@@ -137,7 +137,7 @@ class HBNBCommand(cmd.Cmd):
             return True
 
     def check_class_id(self, name=""):
-        """This Checks the class id"""
+        """Check class id"""
         if len(name.split(' ')) == 1:
             print("** instance id missing **")
             return False
@@ -145,7 +145,7 @@ class HBNBCommand(cmd.Cmd):
             return True
 
     def found_class_name(self, name=""):
-        """Finds the name class"""
+        """Find the name class."""
         if self.check_class_name(name):
             args = shlex.split(name)
             if args[0] in HBNBCommand.__classes:
@@ -153,23 +153,22 @@ class HBNBCommand(cmd.Cmd):
                     key = args[0] + '.' + args[1]
                     return key
                 else:
-                    print("** class does not exist **")
+                    print("** class doesn't exist **")
                     return None
 
     def do_quit(self, args):
-        '''<Quit> Command To exit the program'''
+        '''<Quit> Command To Exit The Program'''
         return True
 
     def do_EOF(self, args):
-        '''handles the end of file'''
+        '''Handles end of file'''
         return True
 
     def emptyline(self):
-        '''
-        do not execute anything when user
-        press enter an empty line
+        '''dont execute anything when user
+           press enter an empty line
         '''
         pass
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     HBNBCommand().cmdloop()
