@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-"""Creates Amenity Class"""
+"""Defines the Amenity class."""
 from models.base_model import BaseModel
 
+
 class Amenity(BaseModel):
-    """Contains class-specific attribute"""
+    """Represent an amenity.
+
+    Attributes:
+        name (str): The name of the amenity.
+    """
+
     name = ""
