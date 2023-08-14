@@ -154,13 +154,13 @@ class HBNBCommand(cmd.Cmd):
                                                                                                         print("** class name missing **")
                                                                                                     elif words[0] not in storage.classes():
                                                                                                         print("** class does not exist **")
-                                                                                                else:
-                                                                                                    matches = [
+                                                                                                    else:
+                                                                                                        matches = [
                                                                                                             k for k in storage.all() if k.startswith(
                                                                                                                 words[0] + '.')]
-                                                                                                            print(len(matches))
+                                                                                                        print(len(matches))
 
-                                                                                                            def do_update(self, line):
+                                                                                                 def do_update(self, line):
                                                                                                                 """Updates instance by adding or updating attribute"""
                                                                                                                 if line == "" or line is None:
                                                                                                                     print("** class name missing **")
@@ -200,5 +200,5 @@ class HBNBCommand(cmd.Cmd):
                                                                                                                                     value = attributes[attributes](value)
                                                                                                                                     storage.all()[key].save()
 
-                                                                                                                                    if __name__ = '__main__':
-                                                                                                                                        HBNBCommand().cmdloop()
+if __name__ = '__main__':
+    HBNBCommand().cmdloop()
