@@ -195,9 +195,15 @@ class HBNBCommand(cmd.Cmd):
                                                                                                                                 cast = int
                                                                                                                             else:
                                                                                                                                 value = value.replace('"', '')
-                                                                                                                                attributes = storage.attributes()[classname]
+                                                                                                                            attributes = storage.attributes()[classname]
                                                                                                                                 if attribute in attributes:
                                                                                                                                     value = attributes[attributes](value)
+                                                                                                                                elif cast:
+                                                                                                                                    try:
+                                                                                                                                        value = cast(value)
+                                                                                                                                    except ValueError:
+                                                                                                                                        pass #fine, stay a string then
+                                                                                                                                    setattr(storage.all()[key], attribute, value)
                                                                                                                                     storage.all()[key].save()
 
 if __name__ = '__main__':
