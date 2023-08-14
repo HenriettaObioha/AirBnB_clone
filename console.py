@@ -150,9 +150,10 @@ class HBNBCommand(cmd.Cmd):
                                                                                                 def do_count(self, line):
                                                                                                     """This counts the class instance"""
                                                                                                     words = line.split(' ')
-                                                                                                    print("** class name missing **")
+                                                                                                    if not words[0]:
+                                                                                                        print("** class name missing **")
                                                                                                 elif words[0] not in storage.classes():
-                                                                                                    print("** class does not exist **")
+                                                                                                        print("** class does not exist **")
                                                                                                 else:
                                                                                                     matches = [
                                                                                                             k for k in storage.all() if k.startswith(
