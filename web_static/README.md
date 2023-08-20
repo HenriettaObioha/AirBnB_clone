@@ -1,1 +1,1 @@
-The AirBnB_clone html and CSS
+This part of the AriBnB clone is the web static part where we will create HTML and CSS styling
